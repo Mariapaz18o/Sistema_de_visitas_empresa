@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Registro de Visitas {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'visitas/style.css' %}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="{% url 'registrar_visita' %}">
+                <span class="brand__mark">RV</span>
+                <span class="brand__text">Registro <small>de visitas</small></span>
+            </a>
+            <div class="page-heading">
+                <span class="page-heading__eyebrow">Control de acceso</span>
+                <h1>{% block header %} Registro de Visitas {% endblock %}</h1>
+            </div>
+            <nav class="site-nav" aria-label="Navegación principal">
+                <a href="{% url 'registrar_visita' %}">Registrar</a>
+                <a href="{% url 'listado_visitas' %}">Listado</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page-shell">
+        {%block content%}{% endblock %}
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'visitas/base.html' %}
+
+{% block title %}Listado de Visitas{% endblock %}
+{% block header %}Visitas de hoy{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>RUT</th>
+        <th>Motivo</th>
+        <th>Hora de entrada</th>
+    </tr>
+    {% for visita in visitas %}
+    <tr>
+        <td>{{ visita.nombre }}</td>
+        <td>{{ visita.rut }}</td>
+        <td>{{ visita.motivo }}</td>
+        <td>{{ visita.hora_entrada }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'registrar_visita' %}">Registrar nueva visita</a>
+{% endblock %}

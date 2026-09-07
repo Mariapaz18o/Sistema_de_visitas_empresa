@@ -1,0 +1,13 @@
+{% extends 'visitas/base.html' %}
+
+{% block title %}Registrar Visita{% endblock %}
+{% block header %}Registrar Visita{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Registrar</button>
+</form>
+<a href="{% url 'listado_visitas' %}">Ver listado de hoy</a>
+{% endblock %}
